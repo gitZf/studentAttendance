@@ -8,7 +8,8 @@ pipeline {
                 git 'https://github.com/gitZf/studentAttendance.git'
                 //sh 'javac studentAttendance/Student.java'
                 sh 'javac -cp junit-4.12.jar:. studentAttendance/Student.java studentAttendance/studentTest.java'
-                sh 'cp studentAttendance/Student.java Student.java'
+                sh 'cp studentAttendance/Student$AttendanceGrade.class Student$AttendanceGrade.class'
+                sh 'cp studentAttendance/Student.java Student.java'   
                 sh 'cp studentAttendance/Student.class Student.class'
                 sh 'cp studentAttendance/studentTest.class studentTest.class'
                 
