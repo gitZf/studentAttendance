@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'git 'https://github.com/gitZf/studentAttendance.git''
                 sh 'javac Student.java'
             }
         }
