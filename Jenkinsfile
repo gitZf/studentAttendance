@@ -6,26 +6,18 @@ pipeline {
             steps {
                 echo 'Building..'
                 git 'https://github.com/gitZf/studentAttendance.git'
-                //sh 'javac studentAttendance/Student.java'
-                sh 'javac -cp junit-4.12.jar:. studentAttendance/Student.java studentAttendance/studentTest.java'
-                sh 'cp studentAttendance/Student$AttendanceGrade.class Student$AttendanceGrade.class'
-                sh 'cp studentAttendance/Student.java Student.java'   
-                sh 'cp studentAttendance/Student.class Student.class'
-                sh 'cp studentAttendance/studentTest.class studentTest.class'
+
+                sh 'cp studentAttendance/Student.java Student.java'
+                sh 'cp studentAttendance/studentTest.java studentTest.java'
+                
+                sh 'javac -cp junit-4.12.jar:. Student.java studentTest.java'
+                
                 
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                //sh 'java -cp /var/lib/jenkins/workspace/Student_Test/junit-4.12.jar:/var/lib/jenkins/workspace/Student_Test/hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore /var/lib/jenkins/workspace/Student_Test/studentAttendance/studentTest'
-                //sh 'java -cp junit-4.12.jar:hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore studentAttendance/studentTest'
-                //sh 'java -cp ../junit-4.12.jar:../hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore studentTest'
-                sh 'pwd'
-                sh 'ls'
-                sh 'cd studentAttendance'
-                sh 'ls'
-                //sh 'java -cp junit-4.12.jar:hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore studentAttendance/studentTest'
                 sh 'java -cp junit-4.12.jar:hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore studentTest'
             }
         }
