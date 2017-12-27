@@ -19,7 +19,9 @@ pipeline {
                 //sh 'java -cp ../junit-4.12.jar:../hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore studentTest'
                 sh 'pwd'
                 sh 'ls'
-                sh 'java -cp junit-4.12.jar:hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore studentAttendance/studentTest'
+                sh 'cd studentAttendance'
+                //sh 'java -cp junit-4.12.jar:hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore studentAttendance/studentTest'
+                sh 'java -cp ../junit-4.12.jar:../hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore studentTest'
             }
         }
         stage('Deploy') {
