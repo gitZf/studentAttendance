@@ -5,19 +5,26 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                //git 'https://github.com/gitZf/studentAttendance.git'
+                //sh
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                //javac Student.java
+                //sh javac Student.java
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                //sh
             }
         }
+        
+        post {
+            always {
+                junit '*.xml'
+            }
+        } 
     }
 }
