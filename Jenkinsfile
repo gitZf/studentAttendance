@@ -6,8 +6,8 @@ pipeline {
             steps {
                 echo 'Building..'
                 git 'https://github.com/gitZf/studentAttendance.git'
-                sh 'javac studentAttendance/Student.java'
-                sh 'javac -cp junit-4.12.jar:. studentAttendance/studentTest.java'
+                //sh 'javac studentAttendance/Student.java'
+                sh 'javac -cp junit-4.12.jar:. studentAttendance/Student.java studentAttendance/studentTest.java'
                
             }
         }
