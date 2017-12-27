@@ -13,20 +13,15 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                //sh javac Student.java
+               
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                //sh
+                
             }
         }
         
-        //post {
-        //    always {
-        //        junit '*.xml'
-        //    }
-        //} 
     }
 }
