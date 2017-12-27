@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                git 'https://github.com/gitZf/studentAttendance.git'
+                //git 'https://github.com/gitZf/studentAttendance.git'
             }
         }
         stage('Test') {
