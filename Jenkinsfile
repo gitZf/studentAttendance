@@ -2,15 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Fetch from GitHub') {
-                steps {
-                    echo 'Building..'
-                    git 'https://github.com/gitZf/studentAttendance.git'
-                }
-            }
         stage('Build') {
             steps {
                 echo 'Building..'
+                git 'https://github.com/gitZf/studentAttendance.git'
             }
         }
         stage('Test') {
