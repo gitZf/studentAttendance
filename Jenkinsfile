@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 git 'https://github.com/gitZf/studentAttendance.git'
-                sh 'javac Student.java'
+                sh javac Student.java
             }
         }
         stage('Test') {
